@@ -1,0 +1,1 @@
+# paligo-nuxt

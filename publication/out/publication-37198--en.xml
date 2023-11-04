@@ -1,0 +1,1490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://docbook.org/ns/docbook"
+  xmlns:xinfo="http://ns.expertinfo.se/cms/xmlns/1.0"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:t="http://ns.expertinfo.se/translation/xmlns/1.0" xml:lang="en" version="5.0" xml:id="UUID-c9afc466-c4df-4d3a-39ed-3bd5937d7bd8" xinfo:resource="UUID-c9afc466-c4df-4d3a-39ed-3bd5937d7bd8" xinfo:resource-id="37198" xinfo:resource-type="publication" xinfo:resource-title="CXS - Space Travel" xinfo:resource-titlelabel="" xinfo:version-major="1" xinfo:version-minor="0" xinfo:time-modified="1691994894" xinfo:time-created="1675071070">
+  <info>
+    <title>Testing Advanced Shuttle Settings</title>
+    <subtitle>Crucial information about C-3PO and R2D2.</subtitle>
+    <mediaobject role="titleimage">
+      <imageobject>
+        <imagedata fileref="image/1654359a69f437.jpg" xinfo:image="37126" xinfo:image-title="R2D2_3PO.jpg" xinfo:image-description="" xinfo:image-filename="R2D2_3PO.jpg"/>
+      </imageobject>
+    </mediaobject>
+    <volumenum xinfo:translate="no"/>
+    <pubdate xinfo:translate="no"/>
+    <copyright xinfo:translate="no">
+      <year/>
+      <holder/>
+    </copyright>
+    <legalnotice xinfo:translate="no">
+      <para/>
+    </legalnotice>
+    <abstract>
+      <para>Must be read before a space journey!</para>
+    </abstract>
+  </info>  <?link id="65742" resource-uuid="UUID-8c0b623c-6261-b94e-c236-2d66d286e125" resource-id="37529" resource-type="fork" type="ResourceLink"?>
+  <section version="5.0" xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125" condition="Review.ReviewOff" xml:lang="en" xinfo:resource="UUID-8c0b623c-6261-b94e-c236-2d66d286e125" xinfo:resource-id="37529" xinfo:resource-type="component fork" xinfo:version-major="0" xinfo:version-minor="0" xinfo:resource-title="Debugging Splice Machine" xinfo:resource-titlelabel="" xinfo:origin="UUID-1f2a0e73-5459-64a9-beb1-410604fc817c" xinfo:origin-id="2381" xinfo:time-modified="1685640203" xinfo:time-created="1510746433" xinfo:linktype="ResourceLink">
+    <title>Debugging Splice Machine</title>
+    <para>This topic describes the parameter values you need to know for debugging Splice Machine with a software tool:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Create a configuration in your software to remotely attach to Splice Machine</para>
+      </listitem>
+      <listitem>
+        <para>Connect to port 4000.</para>
+        <note>
+          <para>If you're debugging code that is to be run in a Spark worker, connect to port 4020 instead.</para>
+        </note>
+      </listitem>
+    </itemizedlist>
+    <para>Example</para>
+    <para>Here's an example of an IntelliJ IDEA debugging configuration using port 4000:</para>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="image/1654359a6a65f3.jpg" xinfo:image="37557" xinfo:image-title="Batteries_fresh.jpg" xinfo:image-description="" xinfo:image-filename="Batteries_fresh.jpg"/>
+      </imageobject>
+    </mediaobject>
+    <para>For access to the full source code for Splice Machine, visit our open source GitHub repository: https://github.com/splicemachine/spliceengine</para>    <?link id="0" resource-uuid="UUID-018db3dd-f9d0-4f7a-803e-451ecc19b1f1" resource-id="2383" resource-type="component" type="ResourceImport"?>
+    <sidebar role="xinclude" xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125_UUID-018db3dd-f9d0-4f7a-803e-451ecc19b1f1" xml:lang="en" xinfo:resource="UUID-018db3dd-f9d0-4f7a-803e-451ecc19b1f1" xinfo:resource-id="2383" xinfo:resource-type="component" xinfo:version-major="0" xinfo:version-minor="0" xinfo:resource-title="This is a new topic in the Splice Machine document" xinfo:resource-titlelabel="" xinfo:time-modified="1510746426" xinfo:time-created="1510746433" xinfo:linktype="ResourceImport">
+      <para>This is a new topic in the Splice Machine documentation.</para>
+      <para>If your find any problems with this page, please file a JIRA bug, or email <xref linkend="id_mailtodocssplicemachinecomsubjectproblemwithdocspage"/>
+      </para>
+    </sidebar>    <?link id="0" resource-uuid="UUID-922fda21-c28f-2e85-f36b-8bb58a3479cc" resource-id="2384" resource-type="component" type="ResourceImport"?>
+    <sidebar role="xinclude" xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125_UUID-922fda21-c28f-2e85-f36b-8bb58a3479cc" xml:lang="en" xinfo:resource="UUID-922fda21-c28f-2e85-f36b-8bb58a3479cc" xinfo:resource-id="2384" xinfo:resource-type="component" xinfo:version-major="0" xinfo:version-minor="0" xinfo:resource-title="Handling Generated Column Values in Imported Files" xinfo:resource-titlelabel="" xinfo:time-modified="1510746432" xinfo:time-created="1510746433" xinfo:linktype="ResourceImport">
+      <bridgehead xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125_bridgehead-idm45756617648832">Handling Generated Column Values in Imported Files</bridgehead>
+      <para>If you're importing data into a table with generated columns (see <xref linkend="id_generatedcolumnspechtml"/>
+ in the SQL Reference Manual), you should know that imported records are handled in exactly the same manner as are records inserted using the <xref linkend="id_inserthtml"/>
+ statement. </para>
+    <para>Here's a simple summary of what happens for generated columns, including DEFAULT values, in imported records:</para>
+    <itemizedlist>
+      <listitem>
+        <para>If your importColumnList includes the column name and the imported column value is empty, NULL is inserted into the database table column.</para>
+      </listitem>
+      <listitem>
+        <para>If your importColumnList includes the column name and the imported column value is not empty, the column value is imported unless the value is not valid in the table.</para>
+      </listitem>
+      <listitem>
+        <para>If you importColumnList does not include the column name, the generated value is inserted into the database table column.</para>
+      </listitem>
+    </itemizedlist>
+    <bridgehead xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125_bridgehead-idm45756617650768">Generated Column Import Examples</bridgehead>
+    <para>To illustrate what happens with generated column values in imported records, we'll use this simple database table created with this statement:</para>
+    <programlisting xinfo:translate="no" xml:space="preserve">CREATE TABLE myTable (
+   colA INT,
+   colB CHAR(4) DEFAULT 'myDefaultVal',
+   colC INT);</programlisting>
+    <informaltable>
+      <col/>
+      <col/>
+      <col/>
+      <col/>
+      <thead>
+        <tr>
+          <th>
+            <para>insertColumnList</para>
+          </th>
+          <th>
+            <para>Values in import record</para>
+          </th>
+          <th>
+            <para>Values inserted into database</para>
+          </th>
+          <th>
+            <para>Notes</para>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <para>"A,B,C"</para>
+          </td>
+          <td>
+            <para>1,,2</para>
+          </td>
+          <td>
+            <para>[1,NULL,2]</para>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>
+            <para>"A,B,C"</para>
+          </td>
+          <td>
+            <para>3,de,4</para>
+          </td>
+          <td>
+            <para>[3,de,4]</para>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>
+            <para>"A,B,C"</para>
+          </td>
+          <td>
+            <para>1,2</para>
+          </td>
+          <td>
+            <para>Error: column B wrong type</para>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>
+            <para>"A,B,C"</para>
+          </td>
+          <td>
+            <para>1,DEFAULT,2</para>
+          </td>
+          <td>
+            <para>[1,"DEFAULT",2]</para>
+          </td>
+          <td>
+            <para>DEFAULT is imported as a literal value</para>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <para>Empty</para>
+          </td>
+          <td>
+            <para>1,,2</para>
+          </td>
+          <td>
+            <para>[1,NULL,2]</para>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>
+            <para>Empty</para>
+          </td>
+          <td>
+            <para>3,de,4</para>
+          </td>
+          <td>
+            <para>[3,de,4]</para>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>
+            <para>Empty</para>
+          </td>
+          <td>
+            <para>1,2</para>
+          </td>
+          <td>
+            <para>Error: column B wrong type</para>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>
+            <para>"A,C"</para>
+          </td>
+          <td>
+            <para>1,2</para>
+          </td>
+          <td>
+            <para>[1,myDefaultVal,2]</para>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>
+            <para>"A,C"</para>
+          </td>
+          <td>
+            <para>3,4</para>
+          </td>
+          <td>
+            <para>[3,myDefaultVal,4]</para>
+          </td>
+          <td/>
+        </tr>
+      </tbody>
+    </informaltable>
+    <para> Note that the value DEFAULT in the imported file is not interpreted to mean that the default value should be applied to that column; instead:</para>
+    <itemizedlist>
+      <listitem>
+        <para>If the target column in your database has a string data type, such as CHAR or VARCHAR, the literal value "DEFAULT" is inserted into your database..</para>
+      </listitem>
+      <listitem>
+        <para>If the target column is not a string data type, an error will occur.</para>
+      </listitem>
+    </itemizedlist>
+    <bridgehead xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125_bridgehead-idm45756617511088">How to Use Generated Values for a Column in Some (but not all) Imported Records</bridgehead>
+    <para>If you are importing a file into a table with a generated column, and you want to import some records with actual values and apply generated values to other records, you need to split your import file into two files and import each:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Import the file containing records with non-default values with the column name included in the insertColumnList.</para>
+      </listitem>
+      <listitem>
+        <para>Import the file  containing records with default values with the column name excluded from the insertColumnList.</para>
+      </listitem>
+    </itemizedlist>
+    <note>
+      <para>When you export a table with generated columns to a file, the actual column values are exported, so importing that same file into a different database will accurately replicate the original table values.</para>
+    </note>
+  </sidebar>  <?link id="65749" resource-uuid="UUID-018db3dd-f9d0-4f7a-803e-451ecc19b1f1" resource-id="2383" resource-type="component" type="ResourceLink"?>
+  <sidebar role="xinclude" xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125_UUID-018db3dd-f9d0-4f7a-803e-451ecc19b1f1" xml:lang="en" xinfo:resource="UUID-018db3dd-f9d0-4f7a-803e-451ecc19b1f1" xinfo:resource-id="2383" xinfo:resource-type="component fork" xinfo:version-major="0" xinfo:version-minor="0" xinfo:resource-title="This is a new topic in the Splice Machine document" xinfo:resource-titlelabel="" xinfo:time-modified="1510746426" xinfo:time-created="1510746433" xinfo:linktype="ResourceLink">
+    <para>This is a new topic in the Splice Machine documentation.</para>
+    <para>If your find any problems with this page, please file a JIRA bug, or email <xref linkend="id_mailtodocssplicemachinecomsubjectproblemwithdocspage"/>
+    </para>
+  </sidebar>  <?link id="65750" resource-uuid="UUID-922fda21-c28f-2e85-f36b-8bb58a3479cc" resource-id="2384" resource-type="component" type="ResourceLink"?>
+  <sidebar role="xinclude" xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125_UUID-922fda21-c28f-2e85-f36b-8bb58a3479cc" xml:lang="en" xinfo:resource="UUID-922fda21-c28f-2e85-f36b-8bb58a3479cc" xinfo:resource-id="2384" xinfo:resource-type="component fork" xinfo:version-major="0" xinfo:version-minor="0" xinfo:resource-title="Handling Generated Column Values in Imported Files" xinfo:resource-titlelabel="" xinfo:time-modified="1510746432" xinfo:time-created="1510746433" xinfo:linktype="ResourceLink">
+    <bridgehead xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125_bridgehead-idm45756617648832">Handling Generated Column Values in Imported Files</bridgehead>
+    <para>If you're importing data into a table with generated columns (see <xref linkend="id_generatedcolumnspechtml"/>
+ in the SQL Reference Manual), you should know that imported records are handled in exactly the same manner as are records inserted using the <xref linkend="id_inserthtml"/>
+ statement. </para>
+  <para>Here's a simple summary of what happens for generated columns, including DEFAULT values, in imported records:</para>
+  <itemizedlist>
+    <listitem>
+      <para>If your importColumnList includes the column name and the imported column value is empty, NULL is inserted into the database table column.</para>
+    </listitem>
+    <listitem>
+      <para>If your importColumnList includes the column name and the imported column value is not empty, the column value is imported unless the value is not valid in the table.</para>
+    </listitem>
+    <listitem>
+      <para>If you importColumnList does not include the column name, the generated value is inserted into the database table column.</para>
+    </listitem>
+  </itemizedlist>
+  <bridgehead xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125_bridgehead-idm45756617650768">Generated Column Import Examples</bridgehead>
+  <para>To illustrate what happens with generated column values in imported records, we'll use this simple database table created with this statement:</para>
+  <programlisting xinfo:translate="no" xml:space="preserve">CREATE TABLE myTable (
+   colA INT,
+   colB CHAR(4) DEFAULT 'myDefaultVal',
+   colC INT);</programlisting>
+  <informaltable>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <thead>
+      <tr>
+        <th>
+          <para>insertColumnList</para>
+        </th>
+        <th>
+          <para>Values in import record</para>
+        </th>
+        <th>
+          <para>Values inserted into database</para>
+        </th>
+        <th>
+          <para>Notes</para>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <para>"A,B,C"</para>
+        </td>
+        <td>
+          <para>1,,2</para>
+        </td>
+        <td>
+          <para>[1,NULL,2]</para>
+        </td>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <para>"A,B,C"</para>
+        </td>
+        <td>
+          <para>3,de,4</para>
+        </td>
+        <td>
+          <para>[3,de,4]</para>
+        </td>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <para>"A,B,C"</para>
+        </td>
+        <td>
+          <para>1,2</para>
+        </td>
+        <td>
+          <para>Error: column B wrong type</para>
+        </td>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <para>"A,B,C"</para>
+        </td>
+        <td>
+          <para>1,DEFAULT,2</para>
+        </td>
+        <td>
+          <para>[1,"DEFAULT",2]</para>
+        </td>
+        <td>
+          <para>DEFAULT is imported as a literal value</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para>Empty</para>
+        </td>
+        <td>
+          <para>1,,2</para>
+        </td>
+        <td>
+          <para>[1,NULL,2]</para>
+        </td>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <para>Empty</para>
+        </td>
+        <td>
+          <para>3,de,4</para>
+        </td>
+        <td>
+          <para>[3,de,4]</para>
+        </td>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <para>Empty</para>
+        </td>
+        <td>
+          <para>1,2</para>
+        </td>
+        <td>
+          <para>Error: column B wrong type</para>
+        </td>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <para>"A,C"</para>
+        </td>
+        <td>
+          <para>1,2</para>
+        </td>
+        <td>
+          <para>[1,myDefaultVal,2]</para>
+        </td>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <para>"A,C"</para>
+        </td>
+        <td>
+          <para>3,4</para>
+        </td>
+        <td>
+          <para>[3,myDefaultVal,4]</para>
+        </td>
+        <td/>
+      </tr>
+    </tbody>
+  </informaltable>
+  <para> Note that the value DEFAULT in the imported file is not interpreted to mean that the default value should be applied to that column; instead:</para>
+  <itemizedlist>
+    <listitem>
+      <para>If the target column in your database has a string data type, such as CHAR or VARCHAR, the literal value "DEFAULT" is inserted into your database..</para>
+    </listitem>
+    <listitem>
+      <para>If the target column is not a string data type, an error will occur.</para>
+    </listitem>
+  </itemizedlist>
+  <bridgehead xml:id="UUID-8c0b623c-6261-b94e-c236-2d66d286e125_bridgehead-idm45756617511088">How to Use Generated Values for a Column in Some (but not all) Imported Records</bridgehead>
+  <para>If you are importing a file into a table with a generated column, and you want to import some records with actual values and apply generated values to other records, you need to split your import file into two files and import each:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Import the file containing records with non-default values with the column name included in the insertColumnList.</para>
+    </listitem>
+    <listitem>
+      <para>Import the file  containing records with default values with the column name excluded from the insertColumnList.</para>
+    </listitem>
+  </itemizedlist>
+  <note>
+    <para>When you export a table with generated columns to a file, the actual column values are exported, so importing that same file into a different database will accurately replicate the original table values.</para>
+  </note>
+</sidebar><?link id="65751" resource-uuid="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35" resource-id="37530" resource-type="fork" type="ResourceLink"?>
+<section xml:lang="en" version="5.0" xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35" xinfo:resource="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35" xinfo:resource-id="37530" xinfo:resource-type="component fork" xinfo:resource-title="A topic with alt texts" xinfo:resource-titlelabel="" xinfo:version-major="1" xinfo:version-minor="0" xinfo:origin="UUID-6e9e48b0-a873-8e52-8902-ff5b3e1ae5f1" xinfo:origin-id="36990" xinfo:time-modified="1698220789" xinfo:time-created="1669122678" xinfo:linktype="ResourceLink">
+  <title>A topic with alt texts</title>
+  <para>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus <xref xlink:href="#UUID-4a8a2e0e-4afe-0d47-c236-27abbb891657" remap="UUID-d31c8008-550f-7eca-7390-c390ee3b1734" role="linktype-component"/>
+ semper eget duis at tellus at. Convallis a cras semper auctor, see . Enim tortor at auctor urna nunc id cursus metus. Amet dictum sit amet justo donec enim diam vulputate. Accumsan lacus vel facilisis volutpat est velit egestas. <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="image/1654359a6aca0c.png" xinfo:image="37136" xinfo:image-title="R2D2.png" xinfo:image-description="" xinfo:image-filename="R2D2.png"/>
+  </imageobject>
+</inlinemediaobject>
+</para>
+<mediaobject xlink:title="a lake view">
+<imageobject>
+  <imagedata fileref="image/1654359a6b56ad.eps" format="svg" xinfo:image="39324" xinfo:image-title="Scene-24.eps" xinfo:image-description="" xinfo:image-filename="Scene-24.eps"/>
+</imageobject>
+</mediaobject>
+<mediaobject>
+<alt>Annan filmsnutt</alt>
+<videoobject>
+  <videodata fileref="https://www.youtube.com/embed/eYOAuUGZn1U" width="50%"/>
+</videoobject>
+</mediaobject>
+<mediaobject>
+<alt>Snygg film</alt>
+<videoobject>
+  <videodata fileref="https://www.youtube.com/embed/eYOAuUGZn1U" width="50%"/>
+</videoobject>
+</mediaobject>
+<informalfigure xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_figure-idm45766403438784339491778792">
+<mediaobject>
+  <alt>Editing topics in Paligo</alt>
+  <videoobject>
+    <videodata fileref="https://www.youtube.com/embed/p_ZapWXrSiQ"/>
+  </videoobject>
+</mediaobject>
+<mediaobject>
+  <alt>Yoda</alt>
+  <imageobject>
+    <imagedata fileref="image/1654359a6cf3d2.jpg" width="50%" xinfo:image="37735" xinfo:image-title="Yoda.jpg" xinfo:image-description="A green man called Yoda from Star Wars." xinfo:image-filename="Yoda.jpg"/>
+  </imageobject>
+</mediaobject>
+</informalfigure>
+<mediaobject>
+<imageobject>
+  <imagedata fileref="image/1654359a6d81f3.png" width="30%" xinfo:image="39318" xinfo:image-title="Scared_cat.png" xinfo:image-description="A terrified wet cat in a sink." xinfo:image-filename="Scared_cat.png"/>
+</imageobject>
+</mediaobject>
+<important>
+<para>Important</para>
+<para>This is very important!</para>
+</important>
+<note role="notice">
+<para>NOTICE</para>
+<para>Candy in general tends to make people happy, when consumed in modest amounts.</para>
+</note>
+<warning role="danger">
+<para>DANGER</para>
+<para>Your teeth may fall out</para>
+</warning>
+<tip>
+<para role="heading">
+  <emphasis role="bold">9 Easy Cooking Tips</emphasis>
+</para>
+<itemizedlist>
+  <listitem>
+    <para>Read the Entire Recipe. ...</para>
+  </listitem>
+  <listitem>
+    <para>Make Notes While You Cook. ...</para>
+  </listitem>
+  <listitem>
+    <para>Season and Taste-Test While Cooking. ...</para>
+  </listitem>
+  <listitem>
+    <para>Substitute Items When Necessary. ...</para>
+  </listitem>
+  <listitem>
+    <para>Pay Attention to Your Food's Consistency. ...</para>
+  </listitem>
+  <listitem>
+    <para>Improvise While Cooking But Not Baking. ...</para>
+  </listitem>
+  <listitem>
+    <para>Don't Be Afraid to Try New Things. ...</para>
+  </listitem>
+  <listitem>
+    <para>Cook What You Know for Guests.</para>
+  </listitem>
+</itemizedlist>
+</tip>
+<warning>
+<para>WARNING</para>
+</warning>
+<caution>
+<para>CAUTION</para>
+</caution>
+<note>
+<para>NOTE</para>
+</note>
+<mediaobject>
+<imageobject>
+  <imagedata fileref="image/1654359a6e477a.jpg" xinfo:image="36322" xinfo:image-title="drone-one.jpg" xinfo:image-description="" xinfo:image-filename="drone-one.jpg"/>
+</imageobject>
+</mediaobject>
+<para>Nam aliquam sem et tortor consequat. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Facilisis gravida neque convallis a <emphasis role="bold">Curriculum</emphasis>. Nibh tellus molestie nunc non blandit massa enim. Suspendisse interdum consectetur libero id faucibus nisl. Odio eu feugiat pretium nibh ipsum consequat.</para>
+<important>
+<para>Avoid crashing into buildings!</para>
+</important>
+<para>Quis lectus nulla at volutpat diam ut venenatis. Non odio euismod lacinia at quis risus sed vulputate. Felis eget velit aliquet sagittis id consectetur purus ut. Dictumst quisque sagittis purus sit. Amet justo donec enim diam vulputate ut. Cras fermentum odio eu feugiat. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Eleifend donec pretium vulputate sapien nec. Viverra justo nec ultrices dui sapien.</para>
+<itemizedlist>
+<listitem>
+  <para>Erat imperdiet sed euismod nisi porta lorem mollis aliquam ut. Nunc congue nisi vitae suscipit tellus. Convallis posuere morbi leo urna molestie at. Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis.</para>
+</listitem>
+<listitem>
+  <para>A diam maecenas sed enim ut sem viverra.</para>
+</listitem>
+<listitem>
+  <para>Dignissim enim sit amet venenatis urna cursus. Posuere ac ut consequat semper viverra nam libero.</para>
+</listitem>
+<listitem>
+  <para>Facilisis leo vel fringilla est ullamcorper. Parturient montes nascetur ridiculus mus. Mattis enim ut tellus elementum sagittis vitae et. Morbi blandit cursus risus at.</para>
+</listitem>
+<listitem>
+  <para>Tellus in hac habitasse platea dictumst vestibulum. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Risus nullam eget felis eget nunc lobortis mattis.</para>
+</listitem>
+<listitem>
+  <para>Faucibus turpis in eu mi bibendum neque egestas congue. Id neque aliquam vestibulum morbi blandit cursus risus.</para>
+</listitem>
+<listitem>
+  <para>Euismod elementum nisi quis eleifend quam adipiscing vitae.</para>
+</listitem>
+</itemizedlist>
+<para>Interdum posuere lorem ipsum dolor sit. Pellentesque dignissim enim sit amet venenatis urna cursus eget. Congue quisque egestas diam in arcu cursus euismod quis viverra. Nam aliquam sem et tortor consequat. Augue lacus viverra vitae congue eu.</para><?link id="0" resource-uuid="UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" resource-id="37573" resource-type="component" type="ResourceImport"?>
+<section xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" role="accordion" xml:lang="en" xinfo:resource="UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" xinfo:resource-id="37573" xinfo:resource-type="component" xinfo:resource-title="Privacy Policy Sitemap" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="1691559118" xinfo:time-created="1676969315" xinfo:linktype="ResourceImport">
+<title>Privacy Policy Sitemap</title>
+<para>Viverra vitae congue eu consequat ac felis donec et. Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat. Quis auctor elit sed vulputate mi. Tristique senectus et netus et malesuada fames ac turpis egestas. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Nunc scelerisque viverra mauris in aliquam.</para>
+<para xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_para-idm393356531699798">Elementum tempus egestas sed sed risus pretium quam vulputate. Neque volutpat ac tincidunt vitae semper quis lectus nulla at. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Fames ac turpis egestas integer eget. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Tincidunt dui ut ornare lectus sit amet est. Ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing. Diam ut venenatis tellus in metus. Maecenas ultricies mi eget mauris pharetra et ultrices.</para>
+<para xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_para-idm393356525553302">Lacus vestibulum sed arcu non odio euismod lacinia. Proin fermentum leo vel orci porta non pulvinar neque. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. Varius morbi enim nunc faucibus. Iaculis urna id volutpat lacus. Id eu nisl nunc mi ipsum faucibus vitae. Nunc consequat interdum varius sit amet mattis vulputate enim. Ultrices tincidunt arcu non sodales neque sodales ut. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Rhoncus urna neque viverra justo nec ultrices dui sapien. Facilisi cras fermentum odio eu. Diam quam nulla porttitor massa id neque aliquam vestibulum. Sed risus pretium quam vulputate dignissim suspendisse.</para>
+<para>Ultrices <xref xlink:href="#UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" role="linktype-hazard"/>
+ dui sapien eget mi proin sed libero. Sapien nec sagittis aliquam malesuada bibendum arcu. Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. At erat pellentesque adipiscing commodo. © 2015 — 2022 Privacy Policy Sitemap Font Generator Images Plugins Generators Share the Lorem, see <xref xlink:href="#UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5" remap="UUID-712a006b-0f7e-eccb-727f-60ba54de3f31" role="linktype-fork"/>
+ and <xref xlink:href="#UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" role="linktype-hazard"/>
+.</para>
+<mediaobject xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_mediaobject-idm393356525940082">
+<imageobject>
+<imagedata fileref="image/1654359a6ed48b.png" width="50%" xinfo:image="37121" xinfo:image-title="SolarSystem.png" xinfo:image-description="" xinfo:image-filename="SolarSystem.png"/>
+</imageobject>
+</mediaobject><?link id="0" resource-uuid="UUID-c44556ea-1648-c3cf-f23b-06d804de5737" resource-id="37758" resource-type="component" type="ResourceImport"?>
+<sidebar xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_UUID-c44556ea-1648-c3cf-f23b-06d804de5737" version="5.0" xml:lang="en" xinfo:resource="UUID-c44556ea-1648-c3cf-f23b-06d804de5737" xinfo:resource-id="37758" xinfo:resource-type="component" xinfo:resource-subtype="informaltopic" xinfo:resource-title="Product Measurements" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="1678283288" xinfo:time-created="1678090771" xinfo:linktype="ResourceImport">
+<warning xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_warning-idm393356528756070">
+<para>It is of outmost importance that these measures are used. Otherwise the forest will get crooked!</para>
+<mediaobject>
+  <imageobject>
+    <imagedata fileref="image/1654359a703894.jpeg" width="15%" xinfo:image="37793" xinfo:image-title="CrookedTrees.jpeg" xinfo:image-description="" xinfo:image-filename="CrookedTrees.jpeg"/>
+  </imageobject>
+</mediaobject>
+</warning>
+<table xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_table-idm459793465366563356181617622" frame="void" rules="none">
+<caption xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_caption-idm393356181956266">Measurements</caption>
+<thead>
+  <tr>
+    <th>
+      <para>40KLM</para>
+    </th>
+    <th>
+      <para>60KLM</para>
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <para>1500 mm</para>
+    </td>
+    <td>
+      <para>3500 mm</para>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <para>250 mm</para>
+    </td>
+    <td>
+      <para xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_para-idm393356223011782">250 mm</para>
+    </td>
+  </tr>
+</tbody>
+</table>
+</sidebar><?link id="0" resource-uuid="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" resource-id="37785" resource-type="hazard" type="ResourceImport"?>
+<caution xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xml:lang="en" xinfo:resource="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xinfo:resource-id="37785" xinfo:resource-type="hazard" xinfo:resource-title="Coconut warning" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="0" xinfo:time-created="1678281889" xinfo:linktype="ResourceImport">
+<para>
+<emphasis role="bold">Beware of falling coconuts!</emphasis>
+</para>
+<para>Coconuts falling from their trees and striking individuals can cause serious injury to the back, neck, shoulders and head, and are occasionally fatal.</para>
+<mediaobject>
+<imageobject>
+  <imagedata fileref="image/1654359a713305.png" xinfo:image="37782" xinfo:image-title="Coconuts.png" xinfo:image-description="" xinfo:image-filename="Coconuts.png"/>
+</imageobject>
+</mediaobject>
+</caution>
+</section><?link id="0" resource-uuid="UUID-30baffe5-7b04-c953-cf6e-f64fde2bea07" resource-id="36971" resource-type="component" type="ResourceImport"?>
+<section xml:lang="en" version="5.0" xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_UUID-30baffe5-7b04-c953-cf6e-f64fde2bea07" xinfo:resource="UUID-30baffe5-7b04-c953-cf6e-f64fde2bea07" xinfo:resource-id="36971" xinfo:resource-type="component" xinfo:resource-title="A topic that needs review" xinfo:resource-titlelabel="" xinfo:version-major="1" xinfo:version-minor="0" xinfo:time-modified="1678281958" xinfo:time-created="1669120549" xinfo:linktype="ResourceImport">
+<title>A topic that needs review</title>
+<para>Lorem ipsum dolor sit amet. Quo asperiores dignissimos et asperiores asperiores et tempore illum et ipsa quae hic accusamus nihil sit dolore molestias est molestiae <emphasis role="underline">ullam</emphasis>. Qui voluptates deleniti aut laborum voluptate vel unde possimus et obcaecati excepturi At optio molestiae. Candy in general tends to make people happy, when consumed in modest amounts. <inlinemediaobject xinfo:merge-context="right">
+<imageobject>
+<imagedata fileref="image/1654359a69f437.jpg" xinfo:image="37126" xinfo:image-title="R2D2_3PO.jpg" xinfo:image-description="" xinfo:image-filename="R2D2_3PO.jpg"/>
+</imageobject>
+</inlinemediaobject>
+</para>
+<para>Sed omnis debitis qui natus ducimus eum nostrum atque sed autem ipsum rem quos ducimus sit vero consequatur. Vel omnis asperiores eos rerum quisquam et doloribus mollitiur. Ut atque repudiandae eum delectus provident aut velit dolore.</para>
+<procedure xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_procedure-idm4669497151416033361395115771">
+<step>
+<para>When the list is added, Paligo creates the first list item or step automatically.</para>
+</step>
+<step>
+<para>Press <guilabel>Enter</guilabel> to add new list items or steps. ⏎</para>
+</step>
+</procedure>
+<para>Ea nesciunt culpa et velit illum aut minus atque vel neque voluptatum qui rerum harum sed unde enim. Sed deleniti maxime cum autem quis et quidem autem qui galisum autem qui fugiat molestiae. Aut optio consequatur <emphasis> (Romeus)</emphasis> et amet quibusdam qui quia laudantium in consectetur dolor. Aut quia quisquam in obcaecati galisum ea voluptatem veniam vel mollitia nisi. Ut odit nihil aut repellat nihil aut impedit sapiente qui enim quae aut maiores modi.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a6e477a.jpg" xinfo:image="36322" xinfo:image-title="drone-one.jpg" xinfo:image-description="" xinfo:image-filename="drone-one.jpg"/>
+</imageobject>
+<caption>
+<para>To get a top view, you ought to use a <emphasis role="underline">drone</emphasis>.
+</para>
+</caption>
+</mediaobject>
+<section xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_section-idm4595445922193633470326335098">
+<title>Need to make some changes</title>
+<para>Ea nesciunt culpa et velit illum aut minus atque vel neque voluptatum qui rerum harum sed unde enim.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a71cf31.png" xinfo:image="37029" xinfo:image-title="cool_car.png" xinfo:image-description="" xinfo:image-filename="cool_car.png"/>
+</imageobject>
+</mediaobject><?link id="0" resource-uuid="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" resource-id="37785" resource-type="hazard" type="ResourceImport"?>
+<caution xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xml:lang="en" xinfo:resource="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xinfo:resource-id="37785" xinfo:resource-type="hazard" xinfo:resource-title="Coconut warning" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="0" xinfo:time-created="1678281889" xinfo:linktype="ResourceImport">
+<para>
+<emphasis role="bold">Beware of falling coconuts!</emphasis>
+</para>
+<para>Coconuts falling from their trees and striking individuals can cause serious injury to the back, neck, shoulders and head, and are occasionally fatal.</para>
+<mediaobject>
+<imageobject>
+  <imagedata fileref="image/1654359a713305.png" xinfo:image="37782" xinfo:image-title="Coconuts.png" xinfo:image-description="" xinfo:image-filename="Coconuts.png"/>
+</imageobject>
+</mediaobject>
+</caution>
+</section>
+</section><?link id="65746" resource-uuid="UUID-30baffe5-7b04-c953-cf6e-f64fde2bea07" resource-id="36971" resource-type="component" type="ResourceLink"?>
+<section xml:lang="en" version="5.0" xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_UUID-30baffe5-7b04-c953-cf6e-f64fde2bea07" xinfo:resource="UUID-30baffe5-7b04-c953-cf6e-f64fde2bea07" xinfo:resource-id="36971" xinfo:resource-type="component fork" xinfo:resource-title="A topic that needs review" xinfo:resource-titlelabel="" xinfo:version-major="1" xinfo:version-minor="0" xinfo:time-modified="1678281958" xinfo:time-created="1669120549" xinfo:linktype="ResourceLink">
+<title>A topic that needs review</title>
+<para>Lorem ipsum dolor sit amet. Quo asperiores dignissimos et asperiores asperiores et tempore illum et ipsa quae hic accusamus nihil sit dolore molestias est molestiae <emphasis role="underline">ullam</emphasis>. Qui voluptates deleniti aut laborum voluptate vel unde possimus et obcaecati excepturi At optio molestiae. Candy in general tends to make people happy, when consumed in modest amounts. <inlinemediaobject xinfo:merge-context="right">
+<imageobject>
+<imagedata fileref="image/1654359a69f437.jpg" xinfo:image="37126" xinfo:image-title="R2D2_3PO.jpg" xinfo:image-description="" xinfo:image-filename="R2D2_3PO.jpg"/>
+</imageobject>
+</inlinemediaobject>
+</para>
+<para>Sed omnis debitis qui natus ducimus eum nostrum atque sed autem ipsum rem quos ducimus sit vero consequatur. Vel omnis asperiores eos rerum quisquam et doloribus mollitiur. Ut atque repudiandae eum delectus provident aut velit dolore.</para>
+<procedure xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_procedure-idm4669497151416033361395115771">
+<step>
+<para>When the list is added, Paligo creates the first list item or step automatically.</para>
+</step>
+<step>
+<para>Press <guilabel>Enter</guilabel> to add new list items or steps. ⏎</para>
+</step>
+</procedure>
+<para>Ea nesciunt culpa et velit illum aut minus atque vel neque voluptatum qui rerum harum sed unde enim. Sed deleniti maxime cum autem quis et quidem autem qui galisum autem qui fugiat molestiae. Aut optio consequatur <emphasis> (Romeus)</emphasis> et amet quibusdam qui quia laudantium in consectetur dolor. Aut quia quisquam in obcaecati galisum ea voluptatem veniam vel mollitia nisi. Ut odit nihil aut repellat nihil aut impedit sapiente qui enim quae aut maiores modi.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a6e477a.jpg" xinfo:image="36322" xinfo:image-title="drone-one.jpg" xinfo:image-description="" xinfo:image-filename="drone-one.jpg"/>
+</imageobject>
+<caption>
+<para>To get a top view, you ought to use a <emphasis role="underline">drone</emphasis>.
+</para>
+</caption>
+</mediaobject>
+<section xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_section-idm4595445922193633470326335098">
+<title>Need to make some changes</title>
+<para>Ea nesciunt culpa et velit illum aut minus atque vel neque voluptatum qui rerum harum sed unde enim.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a71cf31.png" xinfo:image="37029" xinfo:image-title="cool_car.png" xinfo:image-description="" xinfo:image-filename="cool_car.png"/>
+</imageobject>
+</mediaobject><?link id="0" resource-uuid="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" resource-id="37785" resource-type="hazard" type="ResourceImport"?>
+<caution xml:id="UUID-d6ca8f57-970b-160e-ba64-f5f8fa2add35_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xml:lang="en" xinfo:resource="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xinfo:resource-id="37785" xinfo:resource-type="hazard" xinfo:resource-title="Coconut warning" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="0" xinfo:time-created="1678281889" xinfo:linktype="ResourceImport">
+<para>
+<emphasis role="bold">Beware of falling coconuts!</emphasis>
+</para>
+<para>Coconuts falling from their trees and striking individuals can cause serious injury to the back, neck, shoulders and head, and are occasionally fatal.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a713305.png" xinfo:image="37782" xinfo:image-title="Coconuts.png" xinfo:image-description="" xinfo:image-filename="Coconuts.png"/>
+</imageobject>
+</mediaobject>
+</caution>
+</section>
+</section>
+</section><?link id="65752" resource-uuid="UUID-019e3ef7-5a90-f996-a884-29a01a8de542" resource-id="37531" resource-type="fork" type="ResourceLink"?>
+<section xml:id="UUID-019e3ef7-5a90-f996-a884-29a01a8de542" version="5.0" xml:lang="en" xinfo:resource="UUID-019e3ef7-5a90-f996-a884-29a01a8de542" xinfo:resource-id="37531" xinfo:resource-type="component fork" xinfo:resource-title="My troubleshooting topic" xinfo:resource-titlelabel="" xinfo:version-major="1" xinfo:version-minor="0" xinfo:origin="UUID-c5e63e08-3c8b-14ba-09d7-abe802ec7b9c" xinfo:origin-id="8913" xinfo:time-modified="1673616915" xinfo:time-created="1582127539" xinfo:linktype="ResourceLink">
+<title>Troubleshooting</title>
+<para>Introductory text</para>
+<informaltable style="width:100%;" xml:id="UUID-019e3ef7-5a90-f996-a884-29a01a8de542_table-idm391734124202890">
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr>
+<th>
+<para>Describe the problem</para>
+</th>
+<th>
+<para>Add cause</para>
+</th>
+<th>
+<para>Add solution</para>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<para>Cold outside</para>
+</td>
+<td>
+<para>Might get a cold due to wrong clothing</para>
+</td>
+<td>
+<para>Put on a jacket</para>
+</td>
+</tr>
+<tr>
+<td>
+<para>Dry throat</para>
+</td>
+<td>
+<para>Might be dehydrated.</para>
+</td>
+<td>
+<para>Take a glass of water</para>
+</td>
+</tr>
+</tbody>
+</informaltable>
+<para></para>
+<mediaobject>
+<imageobject>
+<imagedata xinfo:image="37029" fileref="image/1654359a71cf31.png" xinfo:image-title="cool_car.png" xinfo:image-description="" xinfo:image-filename="cool_car.png"/>
+</imageobject>
+</mediaobject>
+<para></para>
+<para></para>
+<mediaobject>
+<videoobject>
+<videodata fileref="https://www.youtube.com/watch?v=Jcl-Z9Lb8Hg"/>
+</videoobject>
+</mediaobject>
+<para>lkjsdjslkdjflj</para>
+<programlisting language="plaintext" xinfo:translate="no"> aslkjsd ls kjsdjskdfuyuyls lsdkjsd</programlisting>
+<procedure xml:id="UUID-019e3ef7-5a90-f996-a884-29a01a8de542_procedure-idm393327281946289">
+<step>
+<para></para>
+</step>
+</procedure>
+<note>
+<para>lkjasd laskdls lklks s!</para>
+</note>
+<para></para>
+<para></para>
+<section xml:id="UUID-019e3ef7-5a90-f996-a884-29a01a8de542_section-idm391077756724243">
+<title></title>
+<para></para>
+</section>
+</section>
+</section><?link id="65743" resource-uuid="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5" resource-id="37533" resource-type="fork" type="ResourceLink"?>
+<section label="0" role="accordion" xinfo:resource="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5" xinfo:resource-id="37533" xinfo:resource-title="Battery Disposal" xinfo:resource-titlelabel="includes Index reference" xinfo:resource-type="component fork" xinfo:version-major="1" xinfo:version-minor="0" xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5" xml:lang="en" xinfo:origin="UUID-712a006b-0f7e-eccb-727f-60ba54de3f31" xinfo:origin-id="37013" xinfo:time-modified="1682341727" xinfo:time-created="1670230383" xinfo:linktype="ResourceLink">
+<title>Battery Disposal</title>
+<para>
+<indexterm>
+<primary>Battery Disposal</primary>
+</indexterm>Battery recycling is a recycling activity that aims to reduce the number of batteries being disposed as municipal solid waste. <indexterm>
+<primary>Hazardous</primary>
+<seealso>Famous director</seealso>
+</indexterm>Batteries contain a number of heavy metals and toxic chemicals and disposing of them by the same process as regular household waste has raised concerns over soil contamination and water pollution.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a725e3c.jpg" width="25%" xinfo:image="37546" xinfo:image-title="Batteries.jpg" xinfo:image-description="" xinfo:image-filename="Batteries.jpg"/>
+</imageobject>
+</mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a72ca89.jpg" width="20%" xinfo:image="37114" xinfo:image-title="OuterSpace.jpg" xinfo:image-description="" xinfo:image-filename="OuterSpace.jpg"/>
+</imageobject>
+</mediaobject><?link id="0" resource-uuid="UUID-c44556ea-1648-c3cf-f23b-06d804de5737" resource-id="37758" resource-type="component" type="ResourceImport"?>
+<sidebar xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_UUID-c44556ea-1648-c3cf-f23b-06d804de5737" version="5.0" xml:lang="en" xinfo:resource="UUID-c44556ea-1648-c3cf-f23b-06d804de5737" xinfo:resource-id="37758" xinfo:resource-type="component" xinfo:resource-subtype="informaltopic" xinfo:resource-title="Product Measurements" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="1678283288" xinfo:time-created="1678090771" xinfo:linktype="ResourceImport">
+<warning xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_warning-idm393356528756070">
+<para>It is of outmost importance that these measures are used. Otherwise the forest will get crooked!</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a703894.jpeg" width="15%" xinfo:image="37793" xinfo:image-title="CrookedTrees.jpeg" xinfo:image-description="" xinfo:image-filename="CrookedTrees.jpeg"/>
+</imageobject>
+</mediaobject>
+</warning>
+<table xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_table-idm459793465366563356181617622" frame="void" rules="none">
+<caption xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_caption-idm393356181956266">Measurements</caption>
+<thead>
+<tr>
+<th>
+<para>40KLM</para>
+</th>
+<th>
+<para>60KLM</para>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<para>1500 mm</para>
+</td>
+<td>
+<para>3500 mm</para>
+</td>
+</tr>
+<tr>
+<td>
+<para>250 mm</para>
+</td>
+<td>
+<para xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_para-idm393356223011782">250 mm</para>
+</td>
+</tr>
+</tbody>
+</table>
+</sidebar><?link id="0" resource-uuid="UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" resource-id="37573" resource-type="component" type="ResourceImport"?>
+<section xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" role="accordion" xml:lang="en" xinfo:resource="UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" xinfo:resource-id="37573" xinfo:resource-type="component" xinfo:resource-title="Privacy Policy Sitemap" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="1691559118" xinfo:time-created="1676969315" xinfo:linktype="ResourceImport">
+<title>Privacy Policy Sitemap</title>
+<para>Viverra vitae congue eu consequat ac felis donec et. Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat. Quis auctor elit sed vulputate mi. Tristique senectus et netus et malesuada fames ac turpis egestas. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Nunc scelerisque viverra mauris in aliquam.</para>
+<para xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_para-idm393356531699798">Elementum tempus egestas sed sed risus pretium quam vulputate. Neque volutpat ac tincidunt vitae semper quis lectus nulla at. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Fames ac turpis egestas integer eget. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Tincidunt dui ut ornare lectus sit amet est. Ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing. Diam ut venenatis tellus in metus. Maecenas ultricies mi eget mauris pharetra et ultrices.</para>
+<para xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_para-idm393356525553302">Lacus vestibulum sed arcu non odio euismod lacinia. Proin fermentum leo vel orci porta non pulvinar neque. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. Varius morbi enim nunc faucibus. Iaculis urna id volutpat lacus. Id eu nisl nunc mi ipsum faucibus vitae. Nunc consequat interdum varius sit amet mattis vulputate enim. Ultrices tincidunt arcu non sodales neque sodales ut. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Rhoncus urna neque viverra justo nec ultrices dui sapien. Facilisi cras fermentum odio eu. Diam quam nulla porttitor massa id neque aliquam vestibulum. Sed risus pretium quam vulputate dignissim suspendisse.</para>
+<para>Ultrices <xref xlink:href="#UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" role="linktype-hazard"/>
+ dui sapien eget mi proin sed libero. Sapien nec sagittis aliquam malesuada bibendum arcu. Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. At erat pellentesque adipiscing commodo. © 2015 — 2022 Privacy Policy Sitemap Font Generator Images Plugins Generators Share the Lorem, see <xref xlink:href="#UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5" remap="UUID-712a006b-0f7e-eccb-727f-60ba54de3f31" role="linktype-fork"/>
+ and <xref xlink:href="#UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" role="linktype-hazard"/>
+.</para>
+<mediaobject xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_mediaobject-idm393356525940082">
+<imageobject>
+<imagedata fileref="image/1654359a6ed48b.png" width="50%" xinfo:image="37121" xinfo:image-title="SolarSystem.png" xinfo:image-description="" xinfo:image-filename="SolarSystem.png"/>
+</imageobject>
+</mediaobject><?link id="0" resource-uuid="UUID-c44556ea-1648-c3cf-f23b-06d804de5737" resource-id="37758" resource-type="component" type="ResourceImport"?>
+<sidebar xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_UUID-c44556ea-1648-c3cf-f23b-06d804de5737" version="5.0" xml:lang="en" xinfo:resource="UUID-c44556ea-1648-c3cf-f23b-06d804de5737" xinfo:resource-id="37758" xinfo:resource-type="component" xinfo:resource-subtype="informaltopic" xinfo:resource-title="Product Measurements" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="1678283288" xinfo:time-created="1678090771" xinfo:linktype="ResourceImport">
+<warning xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_warning-idm393356528756070">
+<para>It is of outmost importance that these measures are used. Otherwise the forest will get crooked!</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a703894.jpeg" width="15%" xinfo:image="37793" xinfo:image-title="CrookedTrees.jpeg" xinfo:image-description="" xinfo:image-filename="CrookedTrees.jpeg"/>
+</imageobject>
+</mediaobject>
+</warning>
+<table xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_table-idm459793465366563356181617622" frame="void" rules="none">
+<caption xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_caption-idm393356181956266">Measurements</caption>
+<thead>
+<tr>
+<th>
+<para>40KLM</para>
+</th>
+<th>
+<para>60KLM</para>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<para>1500 mm</para>
+</td>
+<td>
+<para>3500 mm</para>
+</td>
+</tr>
+<tr>
+<td>
+<para>250 mm</para>
+</td>
+<td>
+<para xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_para-idm393356223011782">250 mm</para>
+</td>
+</tr>
+</tbody>
+</table>
+</sidebar><?link id="0" resource-uuid="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" resource-id="37785" resource-type="hazard" type="ResourceImport"?>
+<caution xml:id="UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xml:lang="en" xinfo:resource="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xinfo:resource-id="37785" xinfo:resource-type="hazard" xinfo:resource-title="Coconut warning" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="0" xinfo:time-created="1678281889" xinfo:linktype="ResourceImport">
+<para>
+<emphasis role="bold">Beware of falling coconuts!</emphasis>
+</para>
+<para>Coconuts falling from their trees and striking individuals can cause serious injury to the back, neck, shoulders and head, and are occasionally fatal.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a713305.png" xinfo:image="37782" xinfo:image-title="Coconuts.png" xinfo:image-description="" xinfo:image-filename="Coconuts.png"/>
+</imageobject>
+</mediaobject>
+</caution>
+</section>
+</section><?link id="65882" resource-uuid="UUID-4a8a2e0e-4afe-0d47-c236-27abbb891657" resource-id="37618" resource-type="fork" type="ResourceLink"?>
+<section version="5.0" xinfo:resource="UUID-4a8a2e0e-4afe-0d47-c236-27abbb891657" xinfo:resource-id="37618" xinfo:resource-type="component fork" xinfo:resource-title="Battery Handling" xinfo:resource-titlelabel="includes Index reference" xinfo:version-major="2" xinfo:version-minor="0" role="no-section-toc" xml:id="UUID-4a8a2e0e-4afe-0d47-c236-27abbb891657" xml:lang="en" xinfo:origin="UUID-d31c8008-550f-7eca-7390-c390ee3b1734" xinfo:origin-id="37007" xinfo:time-modified="1685968576" xinfo:time-created="1670227483" xinfo:linktype="ResourceLink">
+<title>Battery Handling</title>
+<para>An electric battery is a source of electric power consisting of one or more electrochemical cells with external connections for <indexterm>
+<primary>Safety precautions</primary>
+<secondary>Battery Disposal</secondary>
+</indexterm>powering electrical devices. When a battery is supplying power, its positive terminal is the cathode and its negative terminal is the anode. The terminal marked negative is the source of electrons that will flow through an external electric circuit to the positive terminal. When a battery is connected to an external electric load. <footnote>
+<para>Duracell batteries were the longest lasting in this test.</para>
+</footnote>A <indexterm>
+<primary>Temperature</primary>
+<see>Science Fiction</see>
+</indexterm>redox <emphasis role="underline" xinfo:merge-context="right">
+<emphasis role="bold">reaction</emphasis>
+</emphasis> converts high-energy reactants to lower-energy products, and the free-energy difference is delivered to the external circuit as electrical energy. Historically the term "battery" specifically referred to a device composed of multiple cells; however, the usage has evolved to include devices composed of a single cell.</para>
+<table xml:id="UUID-4a8a2e0e-4afe-0d47-c236-27abbb891657_table-idm448102498521443354135932081" frame="void" rules="cols" width="100%">
+<caption><?placeholder Insert text?></caption>
+<colgroup>
+<col width="50%" align="left"/>
+<col width="50%" align="left"/>
+</colgroup>
+<thead>
+<tr>
+<th align="left">
+<para>Type</para>
+</th>
+<th align="left">
+<para>Brand</para>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" xml:id="UUID-4a8a2e0e-4afe-0d47-c236-27abbb891657_td-idm393356525328524">
+<para>Lithium <footnote>
+<para>Abrakadabra Q10Plus</para>
+</footnote>
+</para>
+</td>
+<td align="left">
+<para>Duracell</para>
+</td>
+</tr>
+<tr>
+<td align="left">
+<para>Alkaline</para>
+</td>
+<td align="left">
+<para>Lifeline</para>
+</td>
+</tr>
+<tr>
+<td>
+<para>Carbon Zinc</para>
+</td>
+<td>
+<para>Motocross</para>
+</td>
+</tr>
+</tbody>
+</table>
+<para>
+<indexterm>
+<primary>Safety</primary>
+<secondary>Battery disposal</secondary>
+</indexterm>Primary (single-use or "disposable") batteries are used once and discarded, as the electrode materials are irreversibly changed during discharge; a common example is the alkaline battery used for flashlights and a multitude of portable electronic devices. <indexterm>
+<primary>Rechargeable Batteries</primary>
+<seealso>Battery disposal</seealso>
+</indexterm>Secondary (rechargeable) batteries can be discharged and recharged multiple times using an applied electric current; the original composition of the electrodes can be restored by reverse current.</para><?link id="0" resource-uuid="UUID-104dc407-ff01-a670-f5c4-e9910f81623c" resource-id="3379" resource-type="component" type="ResourceImport"?>
+<section xml:id="UUID-4a8a2e0e-4afe-0d47-c236-27abbb891657_UUID-104dc407-ff01-a670-f5c4-e9910f81623c" version="5.0" xml:lang="en" xinfo:resource="UUID-104dc407-ff01-a670-f5c4-e9910f81623c" xinfo:resource-id="3379" xinfo:resource-type="component" xinfo:resource-title="Replace the battery" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="1692020947" xinfo:time-created="1556191950" xinfo:linktype="ResourceImport">
+<title>Replace the battery</title>
+<para>If the battery light is not lit, you should replace the battery.</para>
+<procedure xml:id="UUID-4a8a2e0e-4afe-0d47-c236-27abbb891657_procedure-idm45756618568512">
+<step>
+<para>Press the tab on the side of the battery compartment.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a734e46.png" width="30%" xinfo:image="37847" xinfo:image-title="RemoveBackCover_SmartPhone-B.png" xinfo:image-description="" xinfo:image-filename="RemoveBackCover_SmartPhone-B.png"/>
+</imageobject>
+</mediaobject>
+</step>
+<step>
+<para>Slide the battery compartment lid away from the product, taking care to keep the lid horizontal until the clip is released.</para>
+</step>
+<step>
+<para>When the clip is released, remove the battery compartment lid.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a73d868.png" width="30%" xinfo:image="37845" xinfo:image-title="RemoveBattery_SmartPhone-B.png" xinfo:image-description="" xinfo:image-filename="RemoveBattery_SmartPhone-B.png"/>
+</imageobject>
+</mediaobject>
+</step>
+<step>
+<para>Use the ribbon to pull the battery free.</para>
+</step>
+<step>
+<para>Insert the new battery with the terminals facing into the product and the side with the ACME logo facing upwards.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a7456ae.png" width="30%" xinfo:image="37856" xinfo:image-title="ReplaceBackCover_SmartPhone-B.png" xinfo:image-description="" xinfo:image-filename="ReplaceBackCover_SmartPhone-B.png"/>
+</imageobject>
+</mediaobject>
+</step>
+<step>
+<para>Slide the battery compartment lid back into place. You will feel it click into position when the clip is secure.</para>
+</step>
+<step>
+<para>Check the battery light on the front of the device is lit.</para>
+<warning>
+<para>A heat warning means that <emphasis role="bold">some people can be seriously affected by heat if precautions are not taken</emphasis>. Studies in Canada, Europe, and the U.S. have indicated that mortality begins to increase exponentially as the heat increases or stays above a heat index of 104°F.</para>
+</warning>
+</step>
+</procedure>
+</section>
+</section><?link id="65553" resource-uuid="UUID-19561adc-0594-ebbd-ed63-9311a7b30807" resource-id="37201" resource-type="fork" type="ResourceLink"?>
+<section xml:lang="en" version="5.0" xml:id="UUID-19561adc-0594-ebbd-ed63-9311a7b30807" xinfo:resource="UUID-19561adc-0594-ebbd-ed63-9311a7b30807" xinfo:resource-id="37201" xinfo:resource-type="component fork" xinfo:resource-title="A topic that needs review" xinfo:resource-titlelabel="" xinfo:version-major="1" xinfo:version-minor="0" xinfo:origin="UUID-30baffe5-7b04-c953-cf6e-f64fde2bea07" xinfo:origin-id="36971" xinfo:time-modified="1678281958" xinfo:time-created="1669120549" xinfo:linktype="ResourceLink">
+<title>A topic that needs review</title>
+<para>Lorem ipsum dolor sit amet. Quo asperiores dignissimos et asperiores asperiores et tempore illum et ipsa quae hic accusamus nihil sit dolore molestias est molestiae <emphasis role="underline">ullam</emphasis>. Qui voluptates deleniti aut laborum voluptate vel unde possimus et obcaecati excepturi At optio molestiae. Candy in general tends to make people happy, when consumed in modest amounts. <inlinemediaobject xinfo:merge-context="right">
+<imageobject>
+<imagedata fileref="image/1654359a69f437.jpg" xinfo:image="37126" xinfo:image-title="R2D2_3PO.jpg" xinfo:image-description="" xinfo:image-filename="R2D2_3PO.jpg"/>
+</imageobject>
+</inlinemediaobject>
+</para>
+<para>Sed omnis debitis qui natus ducimus eum nostrum atque sed autem ipsum rem quos ducimus sit vero consequatur. Vel omnis asperiores eos rerum quisquam et doloribus mollitiur. Ut atque repudiandae eum delectus provident aut velit dolore.</para>
+<procedure xml:id="UUID-19561adc-0594-ebbd-ed63-9311a7b30807_procedure-idm4669497151416033361395115771">
+<step>
+<para>When the list is added, Paligo creates the first list item or step automatically.</para>
+</step>
+<step>
+<para>Press <guilabel>Enter</guilabel> to add new list items or steps. ⏎</para>
+</step>
+</procedure>
+<para>Ea nesciunt culpa et velit illum aut minus atque vel neque voluptatum qui rerum harum sed unde enim. Sed deleniti maxime cum autem quis et quidem autem qui galisum autem qui fugiat molestiae. Aut optio consequatur <emphasis> (Romeus)</emphasis> et amet quibusdam qui quia laudantium in consectetur dolor. Aut quia quisquam in obcaecati galisum ea voluptatem veniam vel mollitia nisi. Ut odit nihil aut repellat nihil aut impedit sapiente qui enim quae aut maiores modi.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a6e477a.jpg" xinfo:image="36322" xinfo:image-title="drone-one.jpg" xinfo:image-description="" xinfo:image-filename="drone-one.jpg"/>
+</imageobject>
+<caption>
+<para>To get a top view, you ought to use a <emphasis role="underline">drone</emphasis>.
+</para>
+</caption>
+</mediaobject>
+<section xml:id="UUID-19561adc-0594-ebbd-ed63-9311a7b30807_section-idm4595445922193633470326335098">
+<title>Need to make some changes</title>
+<para>Ea nesciunt culpa et velit illum aut minus atque vel neque voluptatum qui rerum harum sed unde enim.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a71cf31.png" xinfo:image="37029" xinfo:image-title="cool_car.png" xinfo:image-description="" xinfo:image-filename="cool_car.png"/>
+</imageobject>
+</mediaobject><?link id="0" resource-uuid="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" resource-id="37785" resource-type="hazard" type="ResourceImport"?>
+<caution xml:id="UUID-19561adc-0594-ebbd-ed63-9311a7b30807_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xml:lang="en" xinfo:resource="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xinfo:resource-id="37785" xinfo:resource-type="hazard" xinfo:resource-title="Coconut warning" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="0" xinfo:time-created="1678281889" xinfo:linktype="ResourceImport">
+<para>
+<emphasis role="bold">Beware of falling coconuts!</emphasis>
+</para>
+<para>Coconuts falling from their trees and striking individuals can cause serious injury to the back, neck, shoulders and head, and are occasionally fatal.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a713305.png" xinfo:image="37782" xinfo:image-title="Coconuts.png" xinfo:image-description="" xinfo:image-filename="Coconuts.png"/>
+</imageobject>
+</mediaobject>
+</caution>
+</section>
+</section><?link id="65796" resource-uuid="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e" resource-id="37558" resource-type="fork" type="ResourceLink"?>
+<section xml:lang="en" version="5.0" xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e" xinfo:resource="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e" xinfo:resource-id="37558" xinfo:resource-type="component fork" xinfo:resource-title="Function test" xinfo:resource-titlelabel="" xinfo:version-major="1" xinfo:version-minor="0" xinfo:origin="UUID-ce362ea9-9d08-62b0-f585-83be5e532ad0" xinfo:origin-id="37548" xinfo:time-modified="1691054254" xinfo:time-created="1676900442" xinfo:linktype="ResourceLink">
+<title>Function test</title>
+<para>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum <phrase remap="" xinfo:merge-context="right"/>
+ dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</para>
+<warning>
+<para>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</para>
+<para>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</para>
+</warning>
+<para>Viverra vitae congue eu consequat ac felis donec et. Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat. Quis auctor elit sed vulputate mi. Tristique senectus et netus et malesuada fames ac turpis egestas. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Nunc scelerisque viverra mauris in aliquam.</para>
+<para>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</para>
+<procedure xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_procedure-idm4481025487539233538010242279">
+<step>
+<para>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.</para>
+</step>
+<step>
+<para>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</para>
+</step>
+<step>
+<para>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</para>
+<para>Aspernatur aut odit aut fugit, s</para>
+</step>
+</procedure>
+<sidebar role="float: start; width: 210pt; padding: 2pt; border: thin solid black" xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_sidebar-idm4636575952489633544955753975">
+<para>A resourceful astromech droid, R2-D2 served Padmé Amidala, Anakin Skywalker and Luke Skywalker in turn, showing great bravery in rescuing his masters and their friends from many perils. R2-D2 (/ˌɑːr.tuːˈdiːtuː/) or Artoo-Detoo[1] is a fictional robot character in the Star Wars franchise created by George Lucas.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a72ca89.jpg" width="15%" xinfo:image="37114" xinfo:image-title="OuterSpace.jpg" xinfo:image-description="" xinfo:image-filename="OuterSpace.jpg"/>
+</imageobject>
+</mediaobject>
+<para>He has appeared in ten of the eleven theatrical Star Wars films to date.[a] At various points throughout the course of the films, R2, an astromech droid, is a friend to C-3PO, Padmé Amidala, Anakin Skywalker, Leia Organa, Luke Skywalker, and Obi-Wan Kenobi. R2-D2 and his companion C-3PO are the only characters to appear in every theatrical Star Wars film, with the exception of Solo: A Star Wars Story(2018).English actor Kenny Baker played R2-D2 in all three original Star Wars films and received billing credit for the character in the prequel trilogy, where Baker's role was reduced as R2-D2 was portrayed mainly by radio controlled props and CGI models. In the sequel trilogy, Baker was credited as consultant for The Force Awakens; however, Jimmy Vee also co-performed the character in some scenes. Vee later took over the role beginning in The Last Jedi.[2]</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a6aca0c.png" width="20%" xinfo:image="37136" xinfo:image-title="R2D2.png" xinfo:image-description="" xinfo:image-filename="R2D2.png"/>
+</imageobject>
+</mediaobject>
+<para> In The Rise of Skywalker, puppeteers Hassan Taj and Lee Towersey perform the role of R2-D2, replacing Jimmy Vee, who had played the role in the previous two films. His sounds and vocal effects were created by sound designer Ben Burtt.R2-D2 was designed in artwork by Ralph McQuarrie, co-developed by John Stears and built by Peteric Engineering. The revised Empire Strikes Back droids had fibreglass shells built by Tony Dyson and his White Horse Toy Company.</para>
+</sidebar>
+<sidebar role="float:start; padding: 6pt; border: thin dotted purple" xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_sidebar-idm4636576194249633544976921792">
+<para>In The Rise of Skywalker, puppeteers Hassan Taj and Lee Towersey perform the role of <emphasis role="bold">R2-D2</emphasis>, replacing Jimmy Vee, who had played the role in the previous two films. In The Rise of Skywalker, puppeteers Hassan Taj and Lee Towersey perform the role of R2-D2, replacing Jimmy Vee, who had played the role in the previous two films. <inlinemediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a6a65f3.jpg" xinfo:image="37557" xinfo:image-title="Batteries_fresh.jpg" xinfo:image-description="" xinfo:image-filename="Batteries_fresh.jpg"/>
+</imageobject>
+</inlinemediaobject>His sounds and vocal effects were created by sound designer Ben Burtt.R2-D2 was designed in artwork by Ralph McQuarrie, co-developed by John Stears and built by Peteric Engineering. The revised Empire Strikes Back droids had fibreglass shells built by Tony Dyson and his White Horse Toy Company. He has appeared in ten of the eleven theatrical Star Wars films to date.[a] <inlinemediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a74e2f7.png" xinfo:image="37534" xinfo:image-title="Candy.png" xinfo:image-description="" xinfo:image-filename="Candy.png"/>
+</imageobject>
+</inlinemediaobject>At various points throughout the course of the films, R2, an astromech droid, is a friend to C-3PO, Padmé Amidala, Anakin Skywalker, Leia Organa, Luke Skywalker, and Obi-Wan Kenobi. R2-D2 and his companion C-3PO are the only characters to appear in every theatrical Star Wars film, with the exception of Solo: A Star Wars Story(2018).English actor Kenny Baker played R2-D2 in all three original Star Wars films and received billing credit for the character in the prequel trilogy, where Baker's role was reduced as R2-D2 was portrayed mainly by radio controlled props and CGI models. In the sequel trilogy, Baker was credited as consultant for The Force Awakens; however, Jimmy Vee also co-performed the character in some scenes. <inlinemediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a71cf31.png" xinfo:image="37029" xinfo:image-title="cool_car.png" xinfo:image-description="" xinfo:image-filename="cool_car.png"/>
+</imageobject>
+</inlinemediaobject>Vee later took over the role beginning in The Last Jedi.[2]</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a6ed48b.png" width="15%" xinfo:image="37121" xinfo:image-title="SolarSystem.png" xinfo:image-description="" xinfo:image-filename="SolarSystem.png"/>
+</imageobject>
+</mediaobject>
+<para>His sounds and vocal effects were created by sound designer Ben Burtt.R2-D2 was designed in artwork by Ralph McQuarrie, co-developed by John Stears and built by Peteric Engineering. The revised Empire Strikes Back droids had fibreglass shells built by Tony Dyson and his White Horse Toy Company.</para>
+</sidebar><?link id="0" resource-uuid="UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" resource-id="37573" resource-type="component" type="ResourceImport"?>
+<section xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" role="accordion" xml:lang="en" xinfo:resource="UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" xinfo:resource-id="37573" xinfo:resource-type="component" xinfo:resource-title="Privacy Policy Sitemap" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="1691559118" xinfo:time-created="1676969315" xinfo:linktype="ResourceImport">
+<title>Privacy Policy Sitemap</title>
+<para>Viverra vitae congue eu consequat ac felis donec et. Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat. Quis auctor elit sed vulputate mi. Tristique senectus et netus et malesuada fames ac turpis egestas. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Nunc scelerisque viverra mauris in aliquam.</para>
+<para xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_para-idm393356531699798">Elementum tempus egestas sed sed risus pretium quam vulputate. Neque volutpat ac tincidunt vitae semper quis lectus nulla at. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Fames ac turpis egestas integer eget. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Tincidunt dui ut ornare lectus sit amet est. Ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing. Diam ut venenatis tellus in metus. Maecenas ultricies mi eget mauris pharetra et ultrices.</para>
+<para xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_para-idm393356525553302">Lacus vestibulum sed arcu non odio euismod lacinia. Proin fermentum leo vel orci porta non pulvinar neque. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. Varius morbi enim nunc faucibus. Iaculis urna id volutpat lacus. Id eu nisl nunc mi ipsum faucibus vitae. Nunc consequat interdum varius sit amet mattis vulputate enim. Ultrices tincidunt arcu non sodales neque sodales ut. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Rhoncus urna neque viverra justo nec ultrices dui sapien. Facilisi cras fermentum odio eu. Diam quam nulla porttitor massa id neque aliquam vestibulum. Sed risus pretium quam vulputate dignissim suspendisse.</para>
+<para>Ultrices <xref xlink:href="#UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" role="linktype-hazard"/>
+ dui sapien eget mi proin sed libero. Sapien nec sagittis aliquam malesuada bibendum arcu. Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. At erat pellentesque adipiscing commodo. © 2015 — 2022 Privacy Policy Sitemap Font Generator Images Plugins Generators Share the Lorem, see <xref xlink:href="#UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5" remap="UUID-712a006b-0f7e-eccb-727f-60ba54de3f31" role="linktype-fork"/>
+ and <xref xlink:href="#UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" role="linktype-hazard"/>
+.</para>
+<mediaobject xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_mediaobject-idm393356525940082">
+<imageobject>
+<imagedata fileref="image/1654359a6ed48b.png" width="50%" xinfo:image="37121" xinfo:image-title="SolarSystem.png" xinfo:image-description="" xinfo:image-filename="SolarSystem.png"/>
+</imageobject>
+</mediaobject><?link id="0" resource-uuid="UUID-c44556ea-1648-c3cf-f23b-06d804de5737" resource-id="37758" resource-type="component" type="ResourceImport"?>
+<sidebar xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_UUID-c44556ea-1648-c3cf-f23b-06d804de5737" version="5.0" xml:lang="en" xinfo:resource="UUID-c44556ea-1648-c3cf-f23b-06d804de5737" xinfo:resource-id="37758" xinfo:resource-type="component" xinfo:resource-subtype="informaltopic" xinfo:resource-title="Product Measurements" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="1678283288" xinfo:time-created="1678090771" xinfo:linktype="ResourceImport">
+<warning xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_warning-idm393356528756070">
+<para>It is of outmost importance that these measures are used. Otherwise the forest will get crooked!</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a703894.jpeg" width="15%" xinfo:image="37793" xinfo:image-title="CrookedTrees.jpeg" xinfo:image-description="" xinfo:image-filename="CrookedTrees.jpeg"/>
+</imageobject>
+</mediaobject>
+</warning>
+<table xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_table-idm459793465366563356181617622" frame="void" rules="none">
+<caption xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_caption-idm393356181956266">Measurements</caption>
+<thead>
+<tr>
+<th>
+<para>40KLM</para>
+</th>
+<th>
+<para>60KLM</para>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<para>1500 mm</para>
+</td>
+<td>
+<para>3500 mm</para>
+</td>
+</tr>
+<tr>
+<td>
+<para>250 mm</para>
+</td>
+<td>
+<para xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_para-idm393356223011782">250 mm</para>
+</td>
+</tr>
+</tbody>
+</table>
+</sidebar><?link id="0" resource-uuid="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" resource-id="37785" resource-type="hazard" type="ResourceImport"?>
+<caution xml:id="UUID-d939a7fc-9b23-2f3b-38f3-8b25e089708e_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xml:lang="en" xinfo:resource="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xinfo:resource-id="37785" xinfo:resource-type="hazard" xinfo:resource-title="Coconut warning" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="0" xinfo:time-created="1678281889" xinfo:linktype="ResourceImport">
+<para>
+<emphasis role="bold">Beware of falling coconuts!</emphasis>
+</para>
+<para>Coconuts falling from their trees and striking individuals can cause serious injury to the back, neck, shoulders and head, and are occasionally fatal.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a713305.png" xinfo:image="37782" xinfo:image-title="Coconuts.png" xinfo:image-description="" xinfo:image-filename="Coconuts.png"/>
+</imageobject>
+</mediaobject>
+</caution>
+</section>
+</section><?link id="67224" resource-uuid="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace" resource-id="38411" resource-type="fork" type="ResourceLink"?>
+<section xml:lang="en" version="5.0" xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace" xinfo:resource="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace" xinfo:resource-id="38411" xinfo:resource-type="component fork" xinfo:resource-title="A topic with alt texts" xinfo:resource-titlelabel="" xinfo:version-major="1" xinfo:version-minor="0" xinfo:origin="UUID-6e9e48b0-a873-8e52-8902-ff5b3e1ae5f1" xinfo:origin-id="36990" xinfo:time-modified="1698220789" xinfo:time-created="1669122678" xinfo:linktype="ResourceLink">
+<title>A topic with alt texts</title>
+<para>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus <xref xlink:href="#UUID-4a8a2e0e-4afe-0d47-c236-27abbb891657" remap="UUID-d31c8008-550f-7eca-7390-c390ee3b1734" role="linktype-component"/>
+ semper eget duis at tellus at. Convallis a cras semper auctor, see . Enim tortor at auctor urna nunc id cursus metus. Amet dictum sit amet justo donec enim diam vulputate. Accumsan lacus vel facilisis volutpat est velit egestas. <inlinemediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a6aca0c.png" xinfo:image="37136" xinfo:image-title="R2D2.png" xinfo:image-description="" xinfo:image-filename="R2D2.png"/>
+</imageobject>
+</inlinemediaobject>
+</para>
+<mediaobject xlink:title="a lake view">
+<imageobject>
+<imagedata fileref="image/1654359a6b56ad.eps" format="svg" xinfo:image="39324" xinfo:image-title="Scene-24.eps" xinfo:image-description="" xinfo:image-filename="Scene-24.eps"/>
+</imageobject>
+</mediaobject>
+<mediaobject>
+<alt>Annan filmsnutt</alt>
+<videoobject>
+<videodata fileref="https://www.youtube.com/embed/eYOAuUGZn1U" width="50%"/>
+</videoobject>
+</mediaobject>
+<mediaobject>
+<alt>Snygg film</alt>
+<videoobject>
+<videodata fileref="https://www.youtube.com/embed/eYOAuUGZn1U" width="50%"/>
+</videoobject>
+</mediaobject>
+<informalfigure xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_figure-idm45766403438784339491778792">
+<mediaobject>
+<alt>Editing topics in Paligo</alt>
+<videoobject>
+<videodata fileref="https://www.youtube.com/embed/p_ZapWXrSiQ"/>
+</videoobject>
+</mediaobject>
+<mediaobject>
+<alt>Yoda</alt>
+<imageobject>
+<imagedata fileref="image/1654359a6cf3d2.jpg" width="50%" xinfo:image="37735" xinfo:image-title="Yoda.jpg" xinfo:image-description="A green man called Yoda from Star Wars." xinfo:image-filename="Yoda.jpg"/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a6d81f3.png" width="30%" xinfo:image="39318" xinfo:image-title="Scared_cat.png" xinfo:image-description="A terrified wet cat in a sink." xinfo:image-filename="Scared_cat.png"/>
+</imageobject>
+</mediaobject>
+<important>
+<para>Important</para>
+<para>This is very important!</para>
+</important>
+<note role="notice">
+<para>NOTICE</para>
+<para>Candy in general tends to make people happy, when consumed in modest amounts.</para>
+</note>
+<warning role="danger">
+<para>DANGER</para>
+<para>Your teeth may fall out</para>
+</warning>
+<tip>
+<para role="heading">
+<emphasis role="bold">9 Easy Cooking Tips</emphasis>
+</para>
+<itemizedlist>
+<listitem>
+<para>Read the Entire Recipe. ...</para>
+</listitem>
+<listitem>
+<para>Make Notes While You Cook. ...</para>
+</listitem>
+<listitem>
+<para>Season and Taste-Test While Cooking. ...</para>
+</listitem>
+<listitem>
+<para>Substitute Items When Necessary. ...</para>
+</listitem>
+<listitem>
+<para>Pay Attention to Your Food's Consistency. ...</para>
+</listitem>
+<listitem>
+<para>Improvise While Cooking But Not Baking. ...</para>
+</listitem>
+<listitem>
+<para>Don't Be Afraid to Try New Things. ...</para>
+</listitem>
+<listitem>
+<para>Cook What You Know for Guests.</para>
+</listitem>
+</itemizedlist>
+</tip>
+<warning>
+<para>WARNING</para>
+</warning>
+<caution>
+<para>CAUTION</para>
+</caution>
+<note>
+<para>NOTE</para>
+</note>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a6e477a.jpg" xinfo:image="36322" xinfo:image-title="drone-one.jpg" xinfo:image-description="" xinfo:image-filename="drone-one.jpg"/>
+</imageobject>
+</mediaobject>
+<para>Nam aliquam sem et tortor consequat. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Facilisis gravida neque convallis a <emphasis role="bold">Curriculum</emphasis>. Nibh tellus molestie nunc non blandit massa enim. Suspendisse interdum consectetur libero id faucibus nisl. Odio eu feugiat pretium nibh ipsum consequat.</para>
+<important>
+<para>Avoid crashing into buildings!</para>
+</important>
+<para>Quis lectus nulla at volutpat diam ut venenatis. Non odio euismod lacinia at quis risus sed vulputate. Felis eget velit aliquet sagittis id consectetur purus ut. Dictumst quisque sagittis purus sit. Amet justo donec enim diam vulputate ut. Cras fermentum odio eu feugiat. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Eleifend donec pretium vulputate sapien nec. Viverra justo nec ultrices dui sapien.</para>
+<itemizedlist>
+<listitem>
+<para>Erat imperdiet sed euismod nisi porta lorem mollis aliquam ut. Nunc congue nisi vitae suscipit tellus. Convallis posuere morbi leo urna molestie at. Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis.</para>
+</listitem>
+<listitem>
+<para>A diam maecenas sed enim ut sem viverra.</para>
+</listitem>
+<listitem>
+<para>Dignissim enim sit amet venenatis urna cursus. Posuere ac ut consequat semper viverra nam libero.</para>
+</listitem>
+<listitem>
+<para>Facilisis leo vel fringilla est ullamcorper. Parturient montes nascetur ridiculus mus. Mattis enim ut tellus elementum sagittis vitae et. Morbi blandit cursus risus at.</para>
+</listitem>
+<listitem>
+<para>Tellus in hac habitasse platea dictumst vestibulum. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Risus nullam eget felis eget nunc lobortis mattis.</para>
+</listitem>
+<listitem>
+<para>Faucibus turpis in eu mi bibendum neque egestas congue. Id neque aliquam vestibulum morbi blandit cursus risus.</para>
+</listitem>
+<listitem>
+<para>Euismod elementum nisi quis eleifend quam adipiscing vitae.</para>
+</listitem>
+</itemizedlist>
+<para>Interdum posuere lorem ipsum dolor sit. Pellentesque dignissim enim sit amet venenatis urna cursus eget. Congue quisque egestas diam in arcu cursus euismod quis viverra. Nam aliquam sem et tortor consequat. Augue lacus viverra vitae congue eu.</para><?link id="0" resource-uuid="UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" resource-id="37573" resource-type="component" type="ResourceImport"?>
+<section xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" role="accordion" xml:lang="en" xinfo:resource="UUID-f558509a-d54d-bd97-fc72-33ab6f9af33b" xinfo:resource-id="37573" xinfo:resource-type="component" xinfo:resource-title="Privacy Policy Sitemap" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="1691559118" xinfo:time-created="1676969315" xinfo:linktype="ResourceImport">
+<title>Privacy Policy Sitemap</title>
+<para>Viverra vitae congue eu consequat ac felis donec et. Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat. Quis auctor elit sed vulputate mi. Tristique senectus et netus et malesuada fames ac turpis egestas. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Nunc scelerisque viverra mauris in aliquam.</para>
+<para xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_para-idm393356531699798">Elementum tempus egestas sed sed risus pretium quam vulputate. Neque volutpat ac tincidunt vitae semper quis lectus nulla at. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Fames ac turpis egestas integer eget. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Tincidunt dui ut ornare lectus sit amet est. Ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing. Diam ut venenatis tellus in metus. Maecenas ultricies mi eget mauris pharetra et ultrices.</para>
+<para xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_para-idm393356525553302">Lacus vestibulum sed arcu non odio euismod lacinia. Proin fermentum leo vel orci porta non pulvinar neque. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. Varius morbi enim nunc faucibus. Iaculis urna id volutpat lacus. Id eu nisl nunc mi ipsum faucibus vitae. Nunc consequat interdum varius sit amet mattis vulputate enim. Ultrices tincidunt arcu non sodales neque sodales ut. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Rhoncus urna neque viverra justo nec ultrices dui sapien. Facilisi cras fermentum odio eu. Diam quam nulla porttitor massa id neque aliquam vestibulum. Sed risus pretium quam vulputate dignissim suspendisse.</para>
+<para>Ultrices <xref xlink:href="#UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" role="linktype-hazard"/>
+ dui sapien eget mi proin sed libero. Sapien nec sagittis aliquam malesuada bibendum arcu. Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. At erat pellentesque adipiscing commodo. © 2015 — 2022 Privacy Policy Sitemap Font Generator Images Plugins Generators Share the Lorem, see <xref xlink:href="#UUID-412f2505-c5a8-338f-2ae7-5672e2dc20d5" remap="UUID-712a006b-0f7e-eccb-727f-60ba54de3f31" role="linktype-fork"/>
+ and <xref xlink:href="#UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" role="linktype-hazard"/>
+.</para>
+<mediaobject xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_mediaobject-idm393356525940082">
+<imageobject>
+<imagedata fileref="image/1654359a6ed48b.png" width="50%" xinfo:image="37121" xinfo:image-title="SolarSystem.png" xinfo:image-description="" xinfo:image-filename="SolarSystem.png"/>
+</imageobject>
+</mediaobject><?link id="0" resource-uuid="UUID-c44556ea-1648-c3cf-f23b-06d804de5737" resource-id="37758" resource-type="component" type="ResourceImport"?>
+<sidebar xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_UUID-c44556ea-1648-c3cf-f23b-06d804de5737" version="5.0" xml:lang="en" xinfo:resource="UUID-c44556ea-1648-c3cf-f23b-06d804de5737" xinfo:resource-id="37758" xinfo:resource-type="component" xinfo:resource-subtype="informaltopic" xinfo:resource-title="Product Measurements" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="1678283288" xinfo:time-created="1678090771" xinfo:linktype="ResourceImport">
+<warning xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_warning-idm393356528756070">
+<para>It is of outmost importance that these measures are used. Otherwise the forest will get crooked!</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a703894.jpeg" width="15%" xinfo:image="37793" xinfo:image-title="CrookedTrees.jpeg" xinfo:image-description="" xinfo:image-filename="CrookedTrees.jpeg"/>
+</imageobject>
+</mediaobject>
+</warning>
+<table xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_table-idm459793465366563356181617622" frame="void" rules="none">
+<caption xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_caption-idm393356181956266">Measurements</caption>
+<thead>
+<tr>
+<th>
+<para>40KLM</para>
+</th>
+<th>
+<para>60KLM</para>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<para>1500 mm</para>
+</td>
+<td>
+<para>3500 mm</para>
+</td>
+</tr>
+<tr>
+<td>
+<para>250 mm</para>
+</td>
+<td>
+<para xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_para-idm393356223011782">250 mm</para>
+</td>
+</tr>
+</tbody>
+</table>
+</sidebar><?link id="0" resource-uuid="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" resource-id="37785" resource-type="hazard" type="ResourceImport"?>
+<caution xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xml:lang="en" xinfo:resource="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xinfo:resource-id="37785" xinfo:resource-type="hazard" xinfo:resource-title="Coconut warning" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="0" xinfo:time-created="1678281889" xinfo:linktype="ResourceImport">
+<para>
+<emphasis role="bold">Beware of falling coconuts!</emphasis>
+</para>
+<para>Coconuts falling from their trees and striking individuals can cause serious injury to the back, neck, shoulders and head, and are occasionally fatal.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a713305.png" xinfo:image="37782" xinfo:image-title="Coconuts.png" xinfo:image-description="" xinfo:image-filename="Coconuts.png"/>
+</imageobject>
+</mediaobject>
+</caution>
+</section><?link id="0" resource-uuid="UUID-30baffe5-7b04-c953-cf6e-f64fde2bea07" resource-id="36971" resource-type="component" type="ResourceImport"?>
+<section xml:lang="en" version="5.0" xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_UUID-30baffe5-7b04-c953-cf6e-f64fde2bea07" xinfo:resource="UUID-30baffe5-7b04-c953-cf6e-f64fde2bea07" xinfo:resource-id="36971" xinfo:resource-type="component" xinfo:resource-title="A topic that needs review" xinfo:resource-titlelabel="" xinfo:version-major="1" xinfo:version-minor="0" xinfo:time-modified="1678281958" xinfo:time-created="1669120549" xinfo:linktype="ResourceImport">
+<title>A topic that needs review</title>
+<para>Lorem ipsum dolor sit amet. Quo asperiores dignissimos et asperiores asperiores et tempore illum et ipsa quae hic accusamus nihil sit dolore molestias est molestiae <emphasis role="underline">ullam</emphasis>. Qui voluptates deleniti aut laborum voluptate vel unde possimus et obcaecati excepturi At optio molestiae. Candy in general tends to make people happy, when consumed in modest amounts. <inlinemediaobject xinfo:merge-context="right">
+<imageobject>
+<imagedata fileref="image/1654359a69f437.jpg" xinfo:image="37126" xinfo:image-title="R2D2_3PO.jpg" xinfo:image-description="" xinfo:image-filename="R2D2_3PO.jpg"/>
+</imageobject>
+</inlinemediaobject>
+</para>
+<para>Sed omnis debitis qui natus ducimus eum nostrum atque sed autem ipsum rem quos ducimus sit vero consequatur. Vel omnis asperiores eos rerum quisquam et doloribus mollitiur. Ut atque repudiandae eum delectus provident aut velit dolore.</para>
+<procedure xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_procedure-idm4669497151416033361395115771">
+<step>
+<para>When the list is added, Paligo creates the first list item or step automatically.</para>
+</step>
+<step>
+<para>Press <guilabel>Enter</guilabel> to add new list items or steps. ⏎</para>
+</step>
+</procedure>
+<para>Ea nesciunt culpa et velit illum aut minus atque vel neque voluptatum qui rerum harum sed unde enim. Sed deleniti maxime cum autem quis et quidem autem qui galisum autem qui fugiat molestiae. Aut optio consequatur <emphasis> (Romeus)</emphasis> et amet quibusdam qui quia laudantium in consectetur dolor. Aut quia quisquam in obcaecati galisum ea voluptatem veniam vel mollitia nisi. Ut odit nihil aut repellat nihil aut impedit sapiente qui enim quae aut maiores modi.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a6e477a.jpg" xinfo:image="36322" xinfo:image-title="drone-one.jpg" xinfo:image-description="" xinfo:image-filename="drone-one.jpg"/>
+</imageobject>
+<caption>
+<para>To get a top view, you ought to use a <emphasis role="underline">drone</emphasis>.
+</para>
+</caption>
+</mediaobject>
+<section xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_section-idm4595445922193633470326335098">
+<title>Need to make some changes</title>
+<para>Ea nesciunt culpa et velit illum aut minus atque vel neque voluptatum qui rerum harum sed unde enim.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a71cf31.png" xinfo:image="37029" xinfo:image-title="cool_car.png" xinfo:image-description="" xinfo:image-filename="cool_car.png"/>
+</imageobject>
+</mediaobject><?link id="0" resource-uuid="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" resource-id="37785" resource-type="hazard" type="ResourceImport"?>
+<caution xml:id="UUID-b0d735b0-feaa-279b-73ce-3eb9c506dace_UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xml:lang="en" xinfo:resource="UUID-eaa6fa78-30ca-93f0-5feb-29837fab13fd" xinfo:resource-id="37785" xinfo:resource-type="hazard" xinfo:resource-title="Coconut warning" xinfo:resource-titlelabel="" xinfo:version-major="2" xinfo:version-minor="0" xinfo:time-modified="0" xinfo:time-created="1678281889" xinfo:linktype="ResourceImport">
+<para>
+<emphasis role="bold">Beware of falling coconuts!</emphasis>
+</para>
+<para>Coconuts falling from their trees and striking individuals can cause serious injury to the back, neck, shoulders and head, and are occasionally fatal.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a713305.png" xinfo:image="37782" xinfo:image-title="Coconuts.png" xinfo:image-description="" xinfo:image-filename="Coconuts.png"/>
+</imageobject>
+</mediaobject>
+</caution>
+</section>
+</section>
+</section><?link id="67201" resource-uuid="UUID-78f78f2e-02f3-47ae-44fe-8ab9f52c259a" resource-id="38393" resource-type="fork" type="ResourceLink"?>
+<section xml:id="UUID-78f78f2e-02f3-47ae-44fe-8ab9f52c259a" version="5.0" xml:lang="en" xinfo:resource="UUID-78f78f2e-02f3-47ae-44fe-8ab9f52c259a" xinfo:resource-id="38393" xinfo:resource-type="component fork" xinfo:resource-title="Charging your hub" xinfo:resource-titlelabel="" xinfo:version-major="1" xinfo:version-minor="0" xinfo:origin="UUID-6ced4612-854c-e1ea-a685-df5adad2e772" xinfo:origin-id="37584" xinfo:time-modified="1692022293" xinfo:time-created="1676972474" xinfo:linktype="ResourceLink">
+<title>Charging your hub</title>
+<para>Your <phrase remap=""/>
+ has a lithium battery and does not require mains power. The battery is rechargeable via USB-C. Learn more about cables, see <link xlink:href="https://www.google.com/search?client=firefox-b-d&amp;q=usb+cables+types">https://www.google.com/search?client=firefox-b-d&amp;q=usb+cables+types</link>.
+</para>
+<itemizedlist>
+<listitem>
+<para>If the power light on the front of the sensor <emphasis role="bold">flashes red</emphasis>, it means the battery is low on power and needs to be recharged.</para>
+</listitem>
+<listitem>
+<para>If the power light <emphasis role="bold">does not light</emphasis> at all, even after charging, the battery needs to be replaced.</para>
+</listitem>
+</itemizedlist>
+<mediaobject>
+<imageobject>
+<imagedata fileref="image/1654359a77d241.png" width="30%" xinfo:image="37590" xinfo:image-title="Hub_Charge.png" xinfo:image-description="" xinfo:image-filename="Hub_Charge.png"/>
+</imageobject>
+</mediaobject>
+<tip xinfo:product="Ultra">
+<para>The <phrase remap=""/>
+ has a lightning port that can also be used for charging.</para>
+</tip>
+<warning role="danger">
+<para>A heat warning means that <emphasis role="bold">some people can be seriously affected by heat if precautions are not taken</emphasis>. Studies in Canada, Europe, and the U.S. have indicated that mortality begins to increase exponentially as the heat increases or stays above a heat index of 104°F.</para>
+</warning>
+<warning>
+<para>
+<emphasis role="bold">Overcharging occurs when the device or battery is plugged into a charger after full charge has been reached and may reduce battery life</emphasis>. Battery University recommends that nickel- and lithium-based batteries be stored with a 40 percent state-of-charge.</para>
+</warning>
+</section><?link id="67761" resource-uuid="UUID-25a9d8cf-b5b0-80ff-84ba-671561546fdf" resource-id="38805" resource-type="fork" type="ResourceLink"?>
+<section xinfo:resource="UUID-25a9d8cf-b5b0-80ff-84ba-671561546fdf" xinfo:resource-id="38805" xinfo:resource-type="component fork" xinfo:resource-title="A Non-clickable Topic" xinfo:resource-titlelabel="Unclickable" xinfo:version-major="1" xinfo:version-minor="0" role="topichead" xml:id="UUID-25a9d8cf-b5b0-80ff-84ba-671561546fdf" xml:lang="en" xinfo:origin="UUID-47c089b3-126b-8a7a-e33c-4b93f739db05" xinfo:origin-id="38804" xinfo:time-modified="1697199814" xinfo:time-created="1691666695" xinfo:linktype="ResourceLink">
+<title>A Non-clickable Topic</title>
+<para>Vad kan jag lägga här kanske lite info...?</para>
+</section>
+</article>
